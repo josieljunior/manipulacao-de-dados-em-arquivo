@@ -10,6 +10,22 @@ public class ListaEncadeada {
         e.setProximo(cabeca);
         cabeca = e;
     }
+
+	public Dados getCabeca() {
+		return cabeca;
+	}
+
+	public void setCabeca(Dados cabeca) {
+		this.cabeca = cabeca;
+	}
+
+	public Dados getCauda() {
+		return cauda;
+	}
+
+	public void setCauda(Dados cauda) {
+		this.cauda = cauda;
+	}
     
     /*
     public void listarTodos() {
@@ -34,4 +50,5 @@ public class ListaEncadeada {
             aux = aux.getProximo();
         }
     }*/
+    
 }
