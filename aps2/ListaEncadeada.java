@@ -27,16 +27,16 @@ public class ListaEncadeada {
 		this.cauda = cauda;
 	}
     
-    /*
+    
     public void listarTodos() {
     	Dados aux = cabeca;
         while (aux != null) {
-            System.out.println(aux.getNome() + " - " + aux.getRa());
+            System.out.println(aux.getData());
             aux = aux.getProximo();
         }
             
     }
-    
+    /*
     public void removerEstudanteDaLista(Dados e) {
     	Dados aux = cabeca;
         while(aux!=null) {

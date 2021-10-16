@@ -13,7 +13,7 @@ public class CtrlTela {
 	}
 
 	public void update (Tela ta) {
-		
+	
 	}
 
 	public void delete (Tela ta) {
