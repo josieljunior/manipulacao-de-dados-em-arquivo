@@ -20,7 +20,7 @@ public class Tabela extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		// Montando a Tabela:
-		String[] titulos = {"Data", "Hora", "Estação", "Poluente", "Valor","Unidade","Tipo"};
+		String[] titulos = {"Data", "Hora", "Estacao", "Poluente", "Valor","Unidade","Tipo"};
 		dtm = new DefaultTableModel(titulos, 0);
 		
 		LerTexto obj = new LerTexto();

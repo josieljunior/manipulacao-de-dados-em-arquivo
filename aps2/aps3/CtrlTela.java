@@ -19,5 +19,9 @@ public class CtrlTela {
 	public void delete (Tela ta) {
 
 	}
-
+	
+	public void order (Tela ta) {
+		
+		
+	}
 }
