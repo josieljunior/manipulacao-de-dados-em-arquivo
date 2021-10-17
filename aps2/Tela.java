@@ -68,7 +68,7 @@ public class Tela extends JFrame implements ActionListener {
 		btRead.setBounds(110, 300, 75, 25);
 		btUpd.setBounds(190, 300, 75, 25);
 		btDel.setBounds(270, 300, 75, 25);
-		btOrde.setBounds(320, 300, 75, 25);
+		btOrde.setBounds(190, 350, 75, 25);
 		btCan.setBounds(30, 350, 75, 25);
 		
 		this.add(lbData);
