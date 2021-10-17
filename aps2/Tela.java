@@ -15,7 +15,7 @@ public class Tela extends JFrame implements ActionListener {
 	JLabel lbHora = new JLabel("Hora:");
 	JTextField tfHora = new JTextField();
 	
-	JLabel lbEsta = new JLabel("Estaï¿½ï¿½o:");
+	JLabel lbEsta = new JLabel("Estação:");
 	JTextField tfEsta = new JTextField();
 
 	JLabel lbPolu = new JLabel("Poluente:");
@@ -34,7 +34,8 @@ public class Tela extends JFrame implements ActionListener {
 	JButton btRead = new JButton("Read");
 	JButton btUpd = new JButton("Update");
 	JButton btDel = new JButton("Delete");
-	JButton btOrde = new JButton("Order");
+	JButton btOrde1 = new JButton("Order1");
+	JButton btOrde2 = new JButton("Order2");
 
 	JButton btCan = new JButton("Cancel");
 
@@ -68,7 +69,8 @@ public class Tela extends JFrame implements ActionListener {
 		btRead.setBounds(110, 300, 75, 25);
 		btUpd.setBounds(190, 300, 75, 25);
 		btDel.setBounds(270, 300, 75, 25);
-		btOrde.setBounds(190, 350, 75, 25);
+		btOrde1.setBounds(190, 350, 75, 25);
+		btOrde2.setBounds(270, 350, 75, 25);
 		btCan.setBounds(30, 350, 75, 25);
 		
 		this.add(lbData);
@@ -91,14 +93,16 @@ public class Tela extends JFrame implements ActionListener {
 		this.add(btUpd);
 		this.add(btDel);
 		this.add(btCan);
-		this.add(btOrde);
+		this.add(btOrde1);
+		this.add(btOrde2);
 
 		btCre.addActionListener(this);
 		btRead.addActionListener(this);
 		btUpd.addActionListener(this);
 		btDel.addActionListener(this);
 		btCan.addActionListener(this);
-		btOrde.addActionListener(this);
+		btOrde1.addActionListener(this);
+		btOrde2.addActionListener(this);
 		
 		this.setVisible(true);
 	}
@@ -118,9 +122,9 @@ public class Tela extends JFrame implements ActionListener {
 			cta.update(this);
 		} else if (obj.equals(btDel)) {
 			cta.delete(this);
-		} else if (obj.equals(btOrde)) {
-			cta.order(this); 	
-			
+		} else if (obj.equals(btOrde1)) {
+			cta.order(this);
+		} else if (obj.equals(btOrde2)) {
+			cta.order(this); 
 		}
-		
 	}}
