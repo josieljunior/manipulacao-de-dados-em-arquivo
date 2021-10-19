@@ -7,7 +7,10 @@ public class CtrlTela {
 	}
 
 	public void read (Tela ta) {
+		LerTexto texto = new LerTexto();
+		texto.run();
 		Tabela table = new Tabela();
+		table.montarTabela(texto.getVetor());
 	
 		
 	}

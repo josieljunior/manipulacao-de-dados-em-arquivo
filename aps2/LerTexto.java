@@ -7,23 +7,21 @@ import java.io.IOException;
 
 public class LerTexto {
 	ListaEncadeada lista = new ListaEncadeada();
+	private Dados[] vetor;
 
-	  public void run() {
+	  public void run()  {
 
-	    String arquivoCSV = "aps2/dados.txt";
+	    String arquivoTXT = "aps2/dados.txt";
 	    BufferedReader br = null;
 	    String linha = "";
-	    String csvDivisor = ",";
+	    String Divisor = ",";
 	    
 	    try {
 
-	        br = new BufferedReader(new FileReader(arquivoCSV));
+	        br = new BufferedReader(new FileReader(arquivoTXT));
 	        while ((linha = br.readLine()) != null) {
 
-	            String[] pais = linha.split(csvDivisor);
-	        
-	            
-	            
+	            String[] pais = linha.split(Divisor);
 	            Dados dados = new Dados();
 	           	            
 	            dados.setData(pais[0]);
@@ -35,10 +33,8 @@ public class LerTexto {
 	            dados.setTipo(pais[6]);
 	            
 	            lista.adicionarElementoNoInicioDaLista(dados);
-
+	            lista.setTotal(lista.getTotal() + 1);
 	        }
-	       
-
 	    } catch (FileNotFoundException e) {
 	        e.printStackTrace();
 	    } catch (IOException e) {
@@ -52,11 +48,24 @@ public class LerTexto {
 	            }
 	        }
 	    }
+	   
+	   try {
+		vetor = lista.criarVetor();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
 	  }
 
-	public ListaEncadeada getLista() {
-		return lista;
+	public Dados[] getVetor() {
+		return vetor;
 	}
+
+	public void setVetor(Dados[] vetor) {
+		this.vetor = vetor;
+	}
+
+	
+	
 
 }
 
