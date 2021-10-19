@@ -32,7 +32,8 @@ public class Tela extends JFrame implements ActionListener {
 
 	JButton btCre = new JButton("Create");
 	JButton btRead = new JButton("Read");
-	JButton btUpd = new JButton("Update");
+	static JButton btSae = new JButton("Search");
+	static JButton btUpd = new JButton("Update");
 	JButton btDel = new JButton("Delete");
 	JButton btOrde1 = new JButton("Order1");
 	JButton btOrde2 = new JButton("Order2");
@@ -67,6 +68,7 @@ public class Tela extends JFrame implements ActionListener {
 		
 		btCre.setBounds(30, 300, 75, 25);
 		btRead.setBounds(110, 300, 75, 25);
+		btSae.setBounds(190, 300, 75, 25);
 		btUpd.setBounds(190, 300, 75, 25);
 		btDel.setBounds(270, 300, 75, 25);
 		btOrde1.setBounds(190, 350, 75, 25);
@@ -88,16 +90,20 @@ public class Tela extends JFrame implements ActionListener {
 		this.add(lbTipo);
 		this.add(tfTipo);
 		
+		this.add(btUpd);
 		this.add(btCre);
 		this.add(btRead);
-		this.add(btUpd);
+		this.add(btSae);
 		this.add(btDel);
 		this.add(btCan);
 		this.add(btOrde1);
 		this.add(btOrde2);
+		
+		btUpd.setVisible(false);
 
 		btCre.addActionListener(this);
 		btRead.addActionListener(this);
+		btSae.addActionListener(this);
 		btUpd.addActionListener(this);
 		btDel.addActionListener(this);
 		btCan.addActionListener(this);
@@ -118,17 +124,20 @@ public class Tela extends JFrame implements ActionListener {
 			cta.create(this);
 		} else if (obj.equals(btRead)) {
 			cta.read(this);
-		} else if (obj.equals(btUpd)) {
-			cta.update(this);
+		} else if (obj.equals(btSae)) {
+			cta.saerch(this);
 		} else if (obj.equals(btDel)) {
 			cta.delete(this);
 		} else if (obj.equals(btOrde1)) {
 			cta.order(this);
 		} else if (obj.equals(btOrde2)) {
 			cta.order(this); 
+		} else if (obj.equals(btUpd)) {
+			cta.update(this); 
 		}
 	}
 
+	
 	
 
 	

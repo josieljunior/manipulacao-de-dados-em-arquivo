@@ -12,8 +12,10 @@ public class TelaPesquisa extends JFrame implements ActionListener {
 	JLabel lbId = new JLabel("Digite o ID:");
 	static JTextField tfId = new JTextField();
 	JButton btOK = new JButton("OK");
+	static Dados aux = ListaEncadeada.getCabeca();
 
 	public TelaPesquisa() {
+
 		this.setLayout(null);
 		this.setBounds(100, 50, 400, 150);
 		tfId.setText("");
@@ -32,24 +34,34 @@ public class TelaPesquisa extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object obj = e.getSource();
 		if (obj.equals(btOK)) {
-			this.setVisible(false);
-
-			Dados aux = ListaEncadeada.getCabeca();
-
-			int id = Integer.parseInt(tfId.getText());
-			while (aux != null) {
-				if (id == aux.getId()) {
-					Tela.tfData.setText(aux.getData());
-					Tela.tfHora.setText(aux.getHora());
-					Tela.tfEsta.setText(aux.getEstacao());
-					Tela.tfPolu.setText(aux.getPoluente());
-					Tela.tfValor.setText(aux.getValor());
-					Tela.tfUni.setText(aux.getUnidade());
-					Tela.tfTipo.setText(aux.getTipo());
-				}
-				aux = aux.getProximo();
-			}
-
+			pesquisar();
 		}
+	}
+
+	public Dados pesquisar() {
+		this.setVisible(false);
+		int id = Integer.parseInt(tfId.getText());
+		while (aux != null) {
+			if (id == aux.getId()) {
+				Tela.tfData.setText(aux.getData());
+				Tela.tfHora.setText(aux.getHora());
+				Tela.tfEsta.setText(aux.getEstacao());
+				Tela.tfPolu.setText(aux.getPoluente());
+				Tela.tfValor.setText(aux.getValor());
+				Tela.tfUni.setText(aux.getUnidade());
+				Tela.tfTipo.setText(aux.getTipo());
+				Tela.btUpd.setVisible(true);
+				Tela.btSae.setVisible(false);
+				return aux;
+			}
+			aux = aux.getProximo();
+		}
+		return null;
+		
+
+	}
+
+	public static Dados getAux() {
+		return aux;
 	}
 }

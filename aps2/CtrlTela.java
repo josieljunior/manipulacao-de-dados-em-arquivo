@@ -45,11 +45,10 @@ public class CtrlTela {
 		table.montarTabela(LerTexto.getLista());
 	}
 
-	public void update(Tela ta) {
+	public void saerch(Tela ta) {
 		TelaPesquisa tp = new TelaPesquisa();
-		
-	}
 
+	}
 
 	public void delete(Tela ta) {
 		Dados currDado = ListaEncadeada.getCabeca();
@@ -66,7 +65,32 @@ public class CtrlTela {
 
 	}
 
+	public void update(Tela ta) {
+		Tela.btUpd.setVisible(false);
+		Tela.btSae.setVisible(true);
+		//Dados aux = TelaPesquisa.getAux();
+		TelaPesquisa.getAux().setData(Tela.tfData.getText());
+		TelaPesquisa.getAux().setHora(Tela.tfHora.getText());
+		TelaPesquisa.getAux().setEstacao(Tela.tfEsta.getText());
+		TelaPesquisa.getAux().setPoluente(Tela.tfPolu.getText());
+		TelaPesquisa.getAux().setValor(Tela.tfValor.getText());
+		TelaPesquisa.getAux().setUnidade(Tela.tfUni.getText());
+		TelaPesquisa.getAux().setTipo(Tela.tfTipo.getText());
+		
+		Tela.tfData.setText("");
+		Tela.tfHora.setText("");
+		Tela.tfEsta.setText("");
+		Tela.tfPolu.setText("");
+		Tela.tfValor.setText("");
+		Tela.tfUni.setText("");
+		Tela.tfTipo.setText("");
+		
+		JOptionPane.showMessageDialog(null, "Linha atualizada com sucesso.");
+
+	}
+
 	public void order(Tela ta) {
 
 	}
+
 }
