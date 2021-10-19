@@ -1,8 +1,17 @@
 package aps2;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 public class CtrlTela {
+
+	private JFrame telaTexto;
 
 	public void create(Tela ta) {
 		Dados dado = new Dados();
@@ -14,7 +23,7 @@ public class CtrlTela {
 		dado.setUnidade(Tela.tfUni.getText());
 		dado.setTipo(Tela.tfTipo.getText());
 		Dados currDado = ListaEncadeada.getCabeca();
-		dado.setId(currDado.getId()+1);
+		dado.setId(currDado.getId() + 1);
 		ListaEncadeada.adicionarElementoNoInicioDaLista(dado);
 
 		int total = ListaEncadeada.getTotal();
@@ -37,12 +46,14 @@ public class CtrlTela {
 	}
 
 	public void update(Tela ta) {
-		System.out.println(Tela.tfData.getText());
+		TelaPesquisa tp = new TelaPesquisa();
+		
 	}
+
 
 	public void delete(Tela ta) {
 		Dados currDado = ListaEncadeada.getCabeca();
-		
+
 		while (currDado.getProximo().getProximo() != null) {
 			currDado = currDado.getProximo();
 		}
@@ -50,7 +61,7 @@ public class CtrlTela {
 
 		int total = ListaEncadeada.getTotal();
 		ListaEncadeada.setTotal(total--);
-		
+
 		JOptionPane.showMessageDialog(null, "Linha excluida com sucesso.");
 
 	}
