@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class LerTexto {
-	ListaEncadeada lista = new ListaEncadeada();
+	static ListaEncadeada lista = new ListaEncadeada();
 	private Dados[] vetor;
 
 	  public void run()  {
@@ -49,20 +49,22 @@ public class LerTexto {
 	        }
 	    }
 	   
-	   try {
+	   /*try {
 		vetor = lista.criarVetor();
 	} catch (Exception e) {
 		e.printStackTrace();
-	}
+	}*/
 	  }
 
-	public Dados[] getVetor() {
-		return vetor;
+	public static ListaEncadeada getLista() {
+		return lista;
 	}
 
-	public void setVetor(Dados[] vetor) {
-		this.vetor = vetor;
+	public static void setLista(ListaEncadeada lista) {
+		LerTexto.lista = lista;
 	}
+
+	
 
 	
 	

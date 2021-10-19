@@ -10,25 +10,25 @@ import javax.swing.JTextField;
 public class Tela extends JFrame implements ActionListener {
 
 	JLabel lbData = new JLabel("Data:");
-	JTextField tfData = new JTextField();
+	static JTextField tfData = new JTextField();	
 
 	JLabel lbHora = new JLabel("Hora:");
-	JTextField tfHora = new JTextField();
+	static  JTextField tfHora = new JTextField();
 	
 	JLabel lbEsta = new JLabel("Estação:");
-	JTextField tfEsta = new JTextField();
+	static  JTextField tfEsta = new JTextField();
 
 	JLabel lbPolu = new JLabel("Poluente:");
-	JTextField tfPolu = new JTextField();
+	static  JTextField tfPolu = new JTextField();
 
 	JLabel lbValor = new JLabel("Valor:");
-	JTextField tfValor = new JTextField();
+	static  JTextField tfValor = new JTextField();
 	
 	JLabel lbUni = new JLabel("Unidade:");
-	JTextField tfUni = new JTextField();
+	static  JTextField tfUni = new JTextField();
 	
 	JLabel lbTipo = new JLabel("Tipo:");
-	JTextField tfTipo = new JTextField();
+	static  JTextField tfTipo = new JTextField();
 
 	JButton btCre = new JButton("Create");
 	JButton btRead = new JButton("Read");
@@ -127,4 +127,9 @@ public class Tela extends JFrame implements ActionListener {
 		} else if (obj.equals(btOrde2)) {
 			cta.order(this); 
 		}
-	}}
+	}
+
+	
+
+	
+	}

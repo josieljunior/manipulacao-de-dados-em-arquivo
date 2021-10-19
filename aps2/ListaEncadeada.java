@@ -3,9 +3,8 @@ package aps2;
 
 public class ListaEncadeada {
     
-    private Dados cabeca = null;
-    private Dados cauda = null;
-    private int total = 0;
+    private static Dados cabeca = null;
+    private static int total = 0;
     
     public void adicionarElementoNoInicioDaLista(Dados e) {
         e.setProximo(cabeca);
@@ -29,7 +28,7 @@ public class ListaEncadeada {
     }
     
     public Dados[] criarVetor() throws Exception {
-    	int n = this.getTotal();
+    	int n = ListaEncadeada.getTotal();
     	Dados vetor[] = new Dados[n];
     	int x = 0;
     	Dados aux = cabeca;
@@ -40,22 +39,24 @@ public class ListaEncadeada {
         }
 		return vetor;
     }
-    
-    public int getTotal() {
-		return total;
-	}
 
-	public Dados getCabeca() {
+	public static Dados getCabeca() {
 		return cabeca;
 	}
 
-	public void setCabeca(Dados cabeca) {
-		this.cabeca = cabeca;
+	public static void setCabeca(Dados cabeca) {
+		ListaEncadeada.cabeca = cabeca;
 	}
 
-	public void setTotal(int total) {
-		this.total = total;
+	public static int getTotal() {
+		return total;
 	}
+
+	public static void setTotal(int total) {
+		ListaEncadeada.total = total;
+	}
+    
+    
 
 	
     
