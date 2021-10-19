@@ -13,13 +13,13 @@ public class Tabela extends JFrame {
 	public void montarTabela(ListaEncadeada listaEncadeada) {
 		this.setBounds(500, 100, 750, 500);
 
-		String[] titulos = { "Data", "Hora", "Estacao", "Poluente", "Valor", "Unidade", "Tipo" };
+		String[] titulos = { "ID","Data", "Hora", "Estacao", "Poluente", "Valor", "Unidade", "Tipo" };
 		dtm = new DefaultTableModel(titulos, 0);
 		//ListaEncadeada lista = new ListaEncadeada();
-		Dados aux = listaEncadeada.getCabeca();
+		Dados aux = ListaEncadeada.getCabeca();
 
 		while (aux != null) {
-			String[] dados = { aux.getData(), aux.getHora(), aux.getEstacao(), aux.getPoluente(), aux.getValor(),
+			String[] dados = {Integer.toString(aux.getId()),aux.getData(), aux.getHora(), aux.getEstacao(), aux.getPoluente(), aux.getValor(),
 					aux.getUnidade(), aux.getTipo() };
 			dtm.addRow(dados);
 			aux = aux.getProximo();

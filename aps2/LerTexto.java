@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class LerTexto {
 	static ListaEncadeada lista = new ListaEncadeada();
-	private Dados[] vetor;
+	private int id = 0;
 
 	  public void run()  {
 
@@ -31,9 +31,11 @@ public class LerTexto {
 	            dados.setValor(pais[4]);
 	            dados.setUnidade(pais[5]);
 	            dados.setTipo(pais[6]);
+	            dados.setId(id);
 	            
 	            lista.adicionarElementoNoInicioDaLista(dados);
-	            lista.setTotal(lista.getTotal() + 1);
+	            ListaEncadeada.setTotal(ListaEncadeada.getTotal() + 1);
+	            id++;
 	        }
 	    } catch (FileNotFoundException e) {
 	        e.printStackTrace();

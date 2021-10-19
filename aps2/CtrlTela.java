@@ -13,12 +13,10 @@ public class CtrlTela {
 		dado.setValor(Tela.tfValor.getText());
 		dado.setUnidade(Tela.tfUni.getText());
 		dado.setTipo(Tela.tfTipo.getText());
-
 		Dados currDado = ListaEncadeada.getCabeca();
-		while (currDado.getProximo() != null) {
-			currDado = currDado.getProximo();
-		}
-		currDado.setProximo(dado);
+		dado.setId(currDado.getId()+1);
+		ListaEncadeada.adicionarElementoNoInicioDaLista(dado);
+
 		int total = ListaEncadeada.getTotal();
 		ListaEncadeada.setTotal(total++);
 
@@ -30,7 +28,7 @@ public class CtrlTela {
 		Tela.tfUni.setText("");
 		Tela.tfTipo.setText("");
 
-		JOptionPane.showMessageDialog(null, "Dado adicionado com sucesso.");
+		JOptionPane.showMessageDialog(null, "Linha adicionada com sucesso.");
 	}
 
 	public void read(Tela ta) {
@@ -44,11 +42,16 @@ public class CtrlTela {
 
 	public void delete(Tela ta) {
 		Dados currDado = ListaEncadeada.getCabeca();
-		ListaEncadeada.setCabeca(currDado.getProximo());
+		
+		while (currDado.getProximo().getProximo() != null) {
+			currDado = currDado.getProximo();
+		}
+		currDado.setProximo(null);
+
 		int total = ListaEncadeada.getTotal();
 		ListaEncadeada.setTotal(total--);
 		
-		JOptionPane.showMessageDialog(null, "Dado excluido com sucesso.");
+		JOptionPane.showMessageDialog(null, "Linha excluida com sucesso.");
 
 	}
 

@@ -1,15 +1,17 @@
 package aps2;
 
 
+
 public class ListaEncadeada {
     
     private static Dados cabeca = null;
     private static int total = 0;
     
-    public void adicionarElementoNoInicioDaLista(Dados e) {
+    public static void adicionarElementoNoInicioDaLista(Dados e) {
         e.setProximo(cabeca);
         cabeca = e;
     }
+    
         
     public void listarTodos() {
     	Dados aux = cabeca;
@@ -55,25 +57,4 @@ public class ListaEncadeada {
 	public static void setTotal(int total) {
 		ListaEncadeada.total = total;
 	}
-    
-    
-
-	
-    
-    
-    /*
-    public void removerEstudanteDaLista(Dados e) {
-    	Dados aux = cabeca;
-        while(aux!=null) {
-            if(aux.getProximo()==e) {
-            	Dados proximo = aux.getProximo();
-                aux.setProximo(proximo.getProximo());
-            }
-            else if(aux==e) {
-                cabeca = e.getProximo();
-            }
-            aux = aux.getProximo();
-        }
-    }*/
-    
 }

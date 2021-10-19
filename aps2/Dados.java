@@ -9,6 +9,7 @@ public class Dados {
 	private String valor;
 	private String unidade;
 	private String tipo;
+	private int id;
 	private Dados proximo;
 	
 	
@@ -60,6 +61,12 @@ public class Dados {
 	}
 	public void setProximo(Dados proximo) {
 		this.proximo = proximo;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	
