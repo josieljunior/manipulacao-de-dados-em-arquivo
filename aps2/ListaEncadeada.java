@@ -22,14 +22,14 @@ public class ListaEncadeada {
             
     }
     
-    public Dados desenfileirar() throws Exception{
+    public static Dados desenfileirar() throws Exception{
         Dados valor = null;
         valor = cabeca;
         cabeca = cabeca.getProximo();
         return valor;
     }
     
-    public Dados[] criarVetor() throws Exception {
+    public static Dados[] criarVetor() throws Exception {
     	int n = ListaEncadeada.getTotal();
     	Dados vetor[] = new Dados[n];
     	int x = 0;

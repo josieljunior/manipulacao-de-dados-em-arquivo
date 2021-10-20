@@ -19,7 +19,7 @@ public class Tabela extends JFrame {
 		Dados aux = ListaEncadeada.getCabeca();
 
 		while (aux != null) {
-			String[] dados = {Integer.toString(aux.getId()),aux.getData(), aux.getHora(), aux.getEstacao(), aux.getPoluente(), aux.getValor(),
+			String[] dados = {Integer.toString(aux.getId()),aux.getData(), aux.getHora(), aux.getEstacao(), aux.getPoluente(), Float.toString(aux.getValor()),
 					aux.getUnidade(), aux.getTipo() };
 			dtm.addRow(dados);
 			aux = aux.getProximo();

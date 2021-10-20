@@ -28,12 +28,12 @@ public class LerTexto {
 	            dados.setHora(pais[1]);
 	            dados.setEstacao(pais[2]);
 	            dados.setPoluente(pais[3]);
-	            dados.setValor(pais[4]);
+	            dados.setValor(Float.parseFloat(pais[4]));
 	            dados.setUnidade(pais[5]);
 	            dados.setTipo(pais[6]);
 	            dados.setId(id);
 	            
-	            lista.adicionarElementoNoInicioDaLista(dados);
+	            ListaEncadeada.adicionarElementoNoInicioDaLista(dados);
 	            ListaEncadeada.setTotal(ListaEncadeada.getTotal() + 1);
 	            id++;
 	        }

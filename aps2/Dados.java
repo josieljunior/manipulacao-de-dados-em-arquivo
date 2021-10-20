@@ -6,7 +6,7 @@ public class Dados {
 	private String hora;
 	private String estacao;
 	private String poluente;
-	private String valor;
+	private float valor;
 	private String unidade;
 	private String tipo;
 	private int id;
@@ -38,10 +38,10 @@ public class Dados {
 	public void setPoluente(String poluente) {
 		this.poluente = poluente;
 	}
-	public String getValor() {
+	public float getValor() {
 		return valor;
 	}
-	public void setValor(String valor) {
+	public void setValor(float valor) {
 		this.valor = valor;
 	}
 	public String getUnidade() {

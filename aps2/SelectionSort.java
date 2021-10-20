@@ -1,34 +1,34 @@
 package aps2;
 
-public class SelectionSort {  
-    public static void selectionSort(int[] arr){  
-        for (int i = 0; i < arr.length - 1; i++)  
-        {  
-            int index = i;  
-            for (int j = i + 1; j < arr.length; j++){  
-                if (arr[j] < arr[index]){  
-                    index = j;//searching for lowest index  
-                }  
-            }  
-            int smallerNumber = arr[index];   
-            arr[index] = arr[i];  
-            arr[i] = smallerNumber;  
-        }  
-    }  
-       
-    public static void main(String a[]){  
-        int[] arr1 = {9,14,3,2,43,11,58,22};  
-        System.out.println("Before Selection Sort");  
-        for(int i:arr1){  
-            System.out.print(i+" ");  
-        }  
-        System.out.println();  
-          
-        selectionSort(arr1);//sorting array using selection sort  
-         
-        System.out.println("After Selection Sort");  
-        for(int i:arr1){  
-            System.out.print(i+" ");  
-        }  
-    }  
-}  
+
+
+public class SelectionSort {
+	public static void selectionSort(Dados arr[]) {
+		for (int i = 0; i < arr.length - 1; i++) {
+			int index = i;
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[j].getValor() < arr[index].getValor()) {
+					index = j;// searching for lowest index
+				}
+				System.out.println(i);
+			}
+			float smallerNumber = arr[index].getValor();
+			arr[index].setValor(arr[i].getValor());
+			arr[i].setValor(smallerNumber);
+		}
+	}
+	
+	 public static void insertionSort(Dados array[]) {  
+	        int n = array.length;  
+	        for (int j = 1; j < n; j++) {  
+	            float key = array[j].getValor();  
+	            int i = j-1;  
+	            while ( (i > -1) && array[i].getValor() > key )  {  
+	                array[i+1].setValor((array[i].getValor()));
+	                i--;  
+	            }       
+	            array[i+1].setValor(key);		
+	        }  
+
+}
+}

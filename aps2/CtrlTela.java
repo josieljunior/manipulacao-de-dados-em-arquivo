@@ -19,7 +19,7 @@ public class CtrlTela {
 		dado.setHora(Tela.tfHora.getText());
 		dado.setEstacao(Tela.tfEsta.getText());
 		dado.setPoluente(Tela.tfPolu.getText());
-		dado.setValor(Tela.tfValor.getText());
+		dado.setValor(Integer.parseInt(Tela.tfValor.getText()));
 		dado.setUnidade(Tela.tfUni.getText());
 		dado.setTipo(Tela.tfTipo.getText());
 		Dados currDado = ListaEncadeada.getCabeca();
@@ -68,12 +68,11 @@ public class CtrlTela {
 	public void update(Tela ta) {
 		Tela.btUpd.setVisible(false);
 		Tela.btSae.setVisible(true);
-		//Dados aux = TelaPesquisa.getAux();
 		TelaPesquisa.getAux().setData(Tela.tfData.getText());
 		TelaPesquisa.getAux().setHora(Tela.tfHora.getText());
 		TelaPesquisa.getAux().setEstacao(Tela.tfEsta.getText());
 		TelaPesquisa.getAux().setPoluente(Tela.tfPolu.getText());
-		TelaPesquisa.getAux().setValor(Tela.tfValor.getText());
+		TelaPesquisa.getAux().setValor(Integer.parseInt(Tela.tfValor.getText()));
 		TelaPesquisa.getAux().setUnidade(Tela.tfUni.getText());
 		TelaPesquisa.getAux().setTipo(Tela.tfTipo.getText());
 		
@@ -90,6 +89,13 @@ public class CtrlTela {
 	}
 
 	public void order(Tela ta) {
+		//SelectionSort select = new SelectionSort();
+		//Dados dados = ListaEncadeada.getCabeca();
+		try {
+			SelectionSort.insertionSort(ListaEncadeada.criarVetor());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 

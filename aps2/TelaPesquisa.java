@@ -47,7 +47,7 @@ public class TelaPesquisa extends JFrame implements ActionListener {
 				Tela.tfHora.setText(aux.getHora());
 				Tela.tfEsta.setText(aux.getEstacao());
 				Tela.tfPolu.setText(aux.getPoluente());
-				Tela.tfValor.setText(aux.getValor());
+				Tela.tfValor.setText(Float.toString(aux.getValor()));
 				Tela.tfUni.setText(aux.getUnidade());
 				Tela.tfTipo.setText(aux.getTipo());
 				Tela.btUpd.setVisible(true);
