@@ -8,7 +8,7 @@ public class CtrlTela {
 
 	public void read (Tela ta) {
 		Tabela table = new Tabela();
-	
+		System.out.println();
 		
 	}
 

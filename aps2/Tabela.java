@@ -16,7 +16,7 @@ public class Tabela extends JFrame {
 		this.montaJanela();
 	}
 	public void montaJanela() {
-		this.setBounds(100, 100, 400, 300);
+		this.setBounds(100, 100, 500, 500);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		// Montando a Tabela:
@@ -25,14 +25,11 @@ public class Tabela extends JFrame {
 		
 		LerTexto obj = new LerTexto();
 	    obj.run();
-		
-	   
-		
 	    
 	    Dados aux = obj.lista.getCabeca();
         
 	    while (aux != null) {
-        	String[] dados = {aux.getData(),aux.getHora(),aux.getEstacao(),aux.getPoluente(),aux.getValor(),aux.getUnidade(),aux.getTipo()};
+        	String[] dados = {aux.getData(),aux.getHora(),aux.getEstacao(),aux.getPoluente(),Double.toString(aux.getValor()),aux.getUnidade(),aux.getTipo()};
         	dtm.addRow(dados);
             aux = aux.getProximo();
         }

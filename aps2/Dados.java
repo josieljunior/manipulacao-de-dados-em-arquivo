@@ -6,7 +6,7 @@ public class Dados {
 	private String hora;
 	private String estacao;
 	private String poluente;
-	private String valor;
+	private double valor;
 	private String unidade;
 	private String tipo;
 	private Dados proximo;
@@ -37,10 +37,10 @@ public class Dados {
 	public void setPoluente(String poluente) {
 		this.poluente = poluente;
 	}
-	public String getValor() {
+	public double getValor() {
 		return valor;
 	}
-	public void setValor(String valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
 	}
 	public String getUnidade() {
