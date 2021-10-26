@@ -16,6 +16,7 @@ public class SelectionSort {
 			arr[index].setValor(arr[i].getValor());
 			arr[i].setValor(smallerNumber);
 		}
+		System.out.println("Acabou!");
 	}
 	
 	 public static void insertionSort(Dados array[]) {  

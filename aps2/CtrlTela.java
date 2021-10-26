@@ -92,7 +92,7 @@ public class CtrlTela {
 		//SelectionSort select = new SelectionSort();
 		//Dados dados = ListaEncadeada.getCabeca();
 		try {
-			SelectionSort.insertionSort(ListaEncadeada.criarVetor());
+			SelectionSort.selectionSort(ListaEncadeada.criarVetor());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

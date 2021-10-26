@@ -11,7 +11,7 @@ public class LerTexto {
 
 	  public void run()  {
 
-	    String arquivoTXT = "aps2/dados.txt";
+	    String arquivoTXT = "aps2/dados2.txt";
 	    BufferedReader br = null;
 	    String linha = "";
 	    String Divisor = ",";
