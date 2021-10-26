@@ -43,8 +43,11 @@ public class ListaEncadeada {
     	int contador =0;
     	
     	String[][] vetor = new String[ListaEncadeada.getTamanho()][8];
-    	
-    	Dados aux = cabeca;
+    	LerTexto obj = new LerTexto();
+	    obj.run();
+	    
+	    Dados aux = obj.lista.getCabeca();
+    
         while (aux != null) {
         	
         	vetor[contador][0] = aux.getData();
