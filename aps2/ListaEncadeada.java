@@ -39,24 +39,19 @@ public class ListaEncadeada {
 		this.tamanho = tamanho;
 	}
 
-	public void listarTodos() {
+	public Dados[] listarTodos() {
     	int contador =0;
     	
-    	String[][] vetor = new String[ListaEncadeada.getTamanho()][8];
+    	Dados[] vetor = new Dados[ListaEncadeada.getTamanho()];
     	LerTexto obj = new LerTexto();
 	    obj.run();
 	    
 	    Dados aux = obj.lista.getCabeca();
     
+	    
         while (aux != null) {
         	
-        	vetor[contador][0] = aux.getData();
-        	vetor[contador][1] = aux.getHora();
-        	vetor[contador][2] = aux.getEstacao();
-        	vetor[contador][3] = aux.getPoluente();
-        	vetor[contador][4] = Double.toString(aux.getValor());
-        	vetor[contador][5] = aux.getData();
-        	vetor[contador][6] = aux.getData();
+        	vetor[contador] = aux;
         			
         	aux = aux.getProximo();
         	contador++;
@@ -64,20 +59,9 @@ public class ListaEncadeada {
         }
         
         
-        for(int i=0;i<vetor.length;i++) {
-        	if (i==10) {
-        		break;
-        		}
-        	for(int j=0; j<7;j++) {
-        		System.out.print(vetor[i][j]);
-        	}
-        	
-        	System.out.println();
-        }
-       
-        
-            
+        return vetor;
     }
+	
     /*
     public void removerEstudanteDaLista(Dados e) {
     	Dados aux = cabeca;

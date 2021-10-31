@@ -14,14 +14,14 @@ public class LerTexto {
 		BufferedReader br = null;
 		String linha = "";
 		String csvDivisor = ",";
+		int cont =0;
 
 		try {
 
 			br = new BufferedReader(new FileReader(arquivoCSV));
-			while ((linha = br.readLine()) != null) {
-
+			while (cont <100000) {
+				linha = br.readLine();
 				String[] pais = linha.split(csvDivisor);
-
 				Dados dados = new Dados();
 
 				dados.setData(pais[0]);
@@ -33,7 +33,7 @@ public class LerTexto {
 				dados.setTipo(pais[6]);
 
 				lista.adicionarElementoNoInicioDaLista(dados);
-
+				cont ++;
 			}
 
 		} catch (FileNotFoundException e) {
