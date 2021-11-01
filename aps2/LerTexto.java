@@ -19,7 +19,7 @@ public class LerTexto {
 		try {
 
 			br = new BufferedReader(new FileReader(arquivoCSV));
-			while (cont <100000) {
+			while (cont <500000) {
 				linha = br.readLine();
 				String[] pais = linha.split(csvDivisor);
 				Dados dados = new Dados();
