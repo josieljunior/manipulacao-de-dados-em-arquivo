@@ -1,4 +1,8 @@
-package aps2;
+package controller;
+
+import model.LerTexto;
+import view.Tabela;
+import view.Tela;
 
 public class CtrlTela {
 
@@ -8,7 +12,7 @@ public class CtrlTela {
 
 	public void read (Tela ta) {
 		Tabela table = new Tabela();
-		System.out.println();
+		table.exibirTabela(LerTexto.getLista());
 		
 	}
 

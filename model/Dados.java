@@ -1,4 +1,4 @@
-package aps2;
+package model;
 
 public class Dados {
 
