@@ -3,6 +3,7 @@ package view;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 import model.Dados;
@@ -13,10 +14,11 @@ public class Tabela extends JFrame {
 
 	JTable jt;
 	DefaultTableModel dtm;
-	JScrollPane jsPane = new JScrollPane();
+	JScrollPane jsPane = new JScrollPane();	
 	public static Boolean aberto = false;
 
 	public void exibirTabela(ListaEncadeada listaEncadeada) {
+		
 		this.setBounds(500, 100, 750, 500);
 
 		String[] titulos = { "Id","Data", "Hora", "Estacao", "Poluente", "Valor", "Unidade", "Tipo" };
