@@ -14,22 +14,24 @@ public class Tabela extends JFrame {
 	JTable jt;
 	DefaultTableModel dtm;
 	JScrollPane jsPane = new JScrollPane();
+	public static Boolean aberto = false;
 
 	public void exibirTabela(ListaEncadeada listaEncadeada) {
 		this.setBounds(500, 100, 750, 500);
 
-		String[] titulos = { "Data", "Hora", "Estacao", "Poluente", "Valor", "Unidade", "Tipo" };
+		String[] titulos = { "Id","Data", "Hora", "Estacao", "Poluente", "Valor", "Unidade", "Tipo" };
 		dtm = new DefaultTableModel(titulos, 0);
 		Dados aux = ListaEncadeada.getCabeca();
 
 		while (aux != null) {
-			String[] dados = { aux.getData(),
+			String[] dados = { Integer.toString(aux.getId()),
+					           aux.getData(),
 					           aux.getHora(), 
 					           aux.getEstacao(),
 					           aux.getPoluente(),
 					           Double.toString(aux.getValor()),
 					           aux.getUnidade(), 
-					           aux.getTipo() };
+					           aux.getTipo()};
 			dtm.addRow(dados);
 			aux = aux.getProximo();
 		}

@@ -10,9 +10,16 @@ public class Dados {
 	private String unidade;
 	private String tipo;
 	private Dados proximo;
+	private int id;
 	
 	
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getData() {
 		return data;
 	}

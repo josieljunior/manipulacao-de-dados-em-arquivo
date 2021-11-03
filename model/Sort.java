@@ -29,7 +29,6 @@ public class Sort {
 			}
 		}
 		vetor[inicio].setValor(vetor[fim].getValor());
-		;
 		vetor[fim].setValor(pivo);
 		return fim;
 	}
@@ -39,7 +38,8 @@ public class Sort {
 	 * public static void main(String[] args) {
 	 * 
 	 * LerTexto tex = new LerTexto(); ListaEncadeada list = new ListaEncadeada();
-	 * tex.run(); Dados[] vet = list.listarTodos(); quickSort(vet, 0, vet.length-1);
+	 * tex.run(); Dados[] vet = list.listarTodos(); 
+	 * quickSort(vet, 0, vet.length-1);
 	 * 
 	 * for(int i=0; i<500000;i++) {
 	 * 

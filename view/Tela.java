@@ -12,6 +12,9 @@ import controller.CtrlTela;
 
 public class Tela extends JFrame implements ActionListener {
 
+	JLabel lbId = new JLabel("Id:");
+	JTextField tfId = new JTextField();
+	
 	JLabel lbData = new JLabel("Data:");
 	JTextField tfData = new JTextField();
 
@@ -46,6 +49,9 @@ public class Tela extends JFrame implements ActionListener {
 		this.setLayout(null);
 		this.setBounds(100, 50, 400, 500);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		lbId.setBounds(30, 10, 70, 25);
+		tfId.setBounds(110, 10, 200, 25);
 
 		lbData.setBounds(30, 40, 70, 25);
 		tfData.setBounds(110, 40, 200, 25);
@@ -76,6 +82,8 @@ public class Tela extends JFrame implements ActionListener {
 		btOrde2.setBounds(270, 350, 75, 25);
 		btCan.setBounds(30, 350, 75, 25);
 
+		this.add(lbId);
+		this.add(tfId);
 		this.add(lbData);
 		this.add(tfData);
 		this.add(lbHora);
@@ -126,9 +134,17 @@ public class Tela extends JFrame implements ActionListener {
 		} else if (obj.equals(btDel)) {
 			cta.delete(this);
 		} else if (obj.equals(btOrde1)) {
-			cta.order(this);
+			try {
+				cta.order(this);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		} else if (obj.equals(btOrde2)) {
-			cta.order(this);
+			try {
+				cta.order(this);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }

@@ -5,7 +5,7 @@ public class ListaEncadeada {
 	private static Dados cabeca = null;
 	private static int tamanho = 0;
 
-	public void adicionarElementoNoInicioDaLista(Dados e) {
+	public static void adicionarElementoNoInicioDaLista(Dados e) {
 		e.setProximo(cabeca);
 		cabeca = e;
 		tamanho++;
@@ -18,11 +18,11 @@ public class ListaEncadeada {
         return valor;
     }
 	
-	public static Dados[] criarVetor() throws Exception {
+	public static Dados[] criarVetor(ListaEncadeada listaEncadeada) throws Exception {
     	int n = ListaEncadeada.getTamanho();
     	Dados vetor[] = new Dados[n];
     	int x = 0;
-    	Dados aux = cabeca;
+    	Dados aux = ListaEncadeada.getCabeca();
         while (aux != null) {
         	vetor[x] = desenfileirar();
         	aux = aux.getProximo();

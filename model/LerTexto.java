@@ -14,12 +14,12 @@ public class LerTexto {
 		BufferedReader br = null;
 		String linha = "";
 		String csvDivisor = ",";
-		int cont = 0;
+		int cont = 1;
 
 		try {
 
 			br = new BufferedReader(new FileReader(arquivoTXT));
-			while (cont < 500000) {
+			while (cont < 300001) {
 				linha = br.readLine();
 				String[] coluna = linha.split(csvDivisor);
 				Dados dados = new Dados();
@@ -31,6 +31,7 @@ public class LerTexto {
 				dados.setValor(Double.parseDouble(coluna[4]));
 				dados.setUnidade(coluna[5].replace("\"", ""));
 				dados.setTipo(coluna[6].replace("\"", ""));
+				dados.setId(cont);
 
 				lista.adicionarElementoNoInicioDaLista(dados);
 				cont++;
@@ -53,6 +54,10 @@ public class LerTexto {
 
 	public static ListaEncadeada getLista() {
 		return lista;
+	}
+
+	public static void setLista(ListaEncadeada lista) {
+		LerTexto.lista = lista;
 	}
 
 }
