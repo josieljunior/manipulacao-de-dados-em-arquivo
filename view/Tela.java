@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import controller.CtrlTela;
 
 public class Tela extends JFrame implements ActionListener {
+	CtrlTela cta = new CtrlTela();
 
 	JLabel lbId = new JLabel("Id:");
 	public static JTextField tfId = new JTextField();
@@ -125,7 +126,7 @@ public class Tela extends JFrame implements ActionListener {
 
 	public void actionPerformed(ActionEvent arg0) {
 
-		CtrlTela cta = new CtrlTela();
+	
 
 		Object obj = arg0.getSource();
 		if (obj.equals(btCan)) {

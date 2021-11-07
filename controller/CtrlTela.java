@@ -8,24 +8,40 @@ import view.Tabela;
 import view.Tela;
 
 public class CtrlTela {
-	private static Dados novo;
+	Tabela table2 = new Tabela();
 	
+	private static Dados var;
 
 	public void create(Tela ta) {
-
+		
+		Dados var = new Dados();
+		
+		var.setId(Integer.parseInt(Tela.tfId.getText()));
+		var.setData(Tela.tfData.getText());
+		var.setHora(Tela.tfHora.getText());
+		var.setEstacao(Tela.tfEsta.getText());
+		var.setPoluente(Tela.tfPolu.getText());
+		var.setValor(Double.parseDouble(Tela.tfValor.getText()));
+		var.setUnidade(Tela.tfUni.getText());
+		var.setTipo(Tela.tfTipo.getText());
+		
+		
+		ListaEncadeada.adicionarElementoNoInicioDaLista(var);
+		
+		
+		
 	}
 
 	public void read(Tela ta) {
 		
-		Tabela table2 = new Tabela();
 		table2.exibirTabela(LerTexto.getLista());
 
 	}
 
 	public void update(Tela ta) {
+		Dados aux = ListaEncadeada.getCabeca();
 		String Id = Tela.tfId.getText();
 		int id = Integer.parseInt(Id);
-		Dados aux = ListaEncadeada.getCabeca();
 
 		while (aux != null) {
 			if (id == aux.getId()) {
@@ -85,10 +101,10 @@ public class CtrlTela {
 	}
 
 	public Dados getNovo() {
-		return novo;
+		return var;
 	}
 
 	public void setNovo(Dados novo) {
-		CtrlTela.novo = novo;
+		CtrlTela.var = novo;
 	}
 }
