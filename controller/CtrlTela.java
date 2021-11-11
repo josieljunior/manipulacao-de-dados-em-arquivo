@@ -1,6 +1,9 @@
 package controller;
 
+import java.io.IOException;
+
 import model.Dados;
+import model.Exportar;
 import model.LerTexto;
 import model.ListaEncadeada;
 import model.Sort;
@@ -9,14 +12,13 @@ import view.Tela;
 
 public class CtrlTela {
 	private static Dados novo;
-	
 
 	public void create(Tela ta) {
 
 	}
 
 	public void read(Tela ta) {
-		
+
 		Tabela table2 = new Tabela();
 		table2.exibirTabela(LerTexto.getLista());
 
@@ -68,8 +70,6 @@ public class CtrlTela {
 	}
 
 	public void delete(Tela ta) {
-		
-		
 
 	}
 
@@ -82,6 +82,12 @@ public class CtrlTela {
 			lista.adicionarElementoNoInicioDaLista(aux);
 		}
 		LerTexto.setLista(lista);
+	}
+
+	public void export(Tela ta) throws IOException {
+		Exportar expo = new Exportar();
+		
+
 	}
 
 	public Dados getNovo() {

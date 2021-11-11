@@ -2,6 +2,7 @@ package view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,9 +15,9 @@ public class Tela extends JFrame implements ActionListener {
 
 	JLabel lbId = new JLabel("Id:");
 	public static JTextField tfId = new JTextField();
-	
+
 	JLabel lbData = new JLabel("Data:");
-    public static JTextField tfData = new JTextField();
+	public static JTextField tfData = new JTextField();
 
 	JLabel lbHora = new JLabel("Hora:");
 	public static JTextField tfHora = new JTextField();
@@ -43,14 +44,14 @@ public class Tela extends JFrame implements ActionListener {
 	JButton btDel = new JButton("Delete");
 	JButton btOrde1 = new JButton("Order1");
 	JButton btOrde2 = new JButton("Order2");
-
+	JButton btExport = new JButton("Exportar");
 	JButton btCan = new JButton("Cancel");
 
 	public Tela() {
 		this.setLayout(null);
 		this.setBounds(100, 50, 400, 500);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		lbId.setBounds(30, 10, 70, 25);
 		tfId.setBounds(110, 10, 200, 25);
 
@@ -82,6 +83,7 @@ public class Tela extends JFrame implements ActionListener {
 		btDel.setBounds(270, 300, 75, 25);
 		btOrde1.setBounds(190, 350, 75, 25);
 		btOrde2.setBounds(270, 350, 75, 25);
+		btExport.setBounds(270, 400, 75, 25);
 		btCan.setBounds(30, 350, 75, 25);
 
 		this.add(lbId);
@@ -109,6 +111,7 @@ public class Tela extends JFrame implements ActionListener {
 		this.add(btCan);
 		this.add(btOrde1);
 		this.add(btOrde2);
+		this.add(btExport);
 
 		btCre.addActionListener(this);
 		btRead.addActionListener(this);
@@ -118,6 +121,7 @@ public class Tela extends JFrame implements ActionListener {
 		btCan.addActionListener(this);
 		btOrde1.addActionListener(this);
 		btOrde2.addActionListener(this);
+		btExport.addActionListener(this);
 		btUpd2.setVisible(false);
 
 		this.setVisible(true);
@@ -137,7 +141,7 @@ public class Tela extends JFrame implements ActionListener {
 		} else if (obj.equals(btUpd)) {
 			cta.update(this);
 		} else if (obj.equals(btUpd2)) {
-			cta.update2(this); 
+			cta.update2(this);
 		} else if (obj.equals(btDel)) {
 			cta.delete(this);
 		} else if (obj.equals(btOrde1)) {
@@ -150,6 +154,12 @@ public class Tela extends JFrame implements ActionListener {
 			try {
 				cta.order(this);
 			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (obj.equals(btExport)) {
+			try {
+				cta.export(this);
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
