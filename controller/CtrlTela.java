@@ -11,23 +11,47 @@ import view.Tabela;
 import view.Tela;
 
 public class CtrlTela {
+
 	private static Dados novo;
 
-	public void create(Tela ta) {
+	Tabela table2 = new Tabela();
+	
+	private static Dados var;
 
+
+	public void create(Tela ta) {
+		
+		Dados var = new Dados();
+		
+		var.setId(Integer.parseInt(Tela.tfId.getText()));
+		var.setData(Tela.tfData.getText());
+		var.setHora(Tela.tfHora.getText());
+		var.setEstacao(Tela.tfEsta.getText());
+		var.setPoluente(Tela.tfPolu.getText());
+		var.setValor(Double.parseDouble(Tela.tfValor.getText()));
+		var.setUnidade(Tela.tfUni.getText());
+		var.setTipo(Tela.tfTipo.getText());
+		
+		
+		ListaEncadeada.adicionarElementoNoInicioDaLista(var);
+		
+		resetarCampos();
+		
 	}
 
 	public void read(Tela ta) {
 
+
 		Tabela table2 = new Tabela();
+
 		table2.exibirTabela(LerTexto.getLista());
 
 	}
 
 	public void update(Tela ta) {
+		Dados aux = ListaEncadeada.getCabeca();
 		String Id = Tela.tfId.getText();
 		int id = Integer.parseInt(Id);
-		Dados aux = ListaEncadeada.getCabeca();
 
 		while (aux != null) {
 			if (id == aux.getId()) {
@@ -56,14 +80,8 @@ public class CtrlTela {
 		getNovo().setUnidade(Tela.tfUni.getText());
 		getNovo().setTipo(Tela.tfTipo.getText());
 
-		Tela.tfId.setText("");
-		Tela.tfData.setText("");
-		Tela.tfHora.setText("");
-		Tela.tfEsta.setText("");
-		Tela.tfPolu.setText("");
-		Tela.tfValor.setText("");
-		Tela.tfUni.setText("");
-		Tela.tfTipo.setText("");
+		resetarCampos();
+		
 		Tela.btUpd.setVisible(true);
 		Tela.btUpd2.setVisible(false);
 
@@ -71,6 +89,35 @@ public class CtrlTela {
 
 	public void delete(Tela ta) {
 
+
+		Dados var = new Dados();
+		Dados aux = ListaEncadeada.getCabeca();
+		String Id = Tela.tfId.getText();
+		int id = Integer.parseInt(Id);
+		
+		var.setId(Integer.parseInt(Tela.tfId.getText()));
+		var.setData(Tela.tfData.getText());
+		var.setHora(Tela.tfHora.getText());
+		var.setEstacao(Tela.tfEsta.getText());
+		var.setPoluente(Tela.tfPolu.getText());
+		var.setValor(Double.parseDouble(Tela.tfValor.getText()));
+		var.setUnidade(Tela.tfUni.getText());
+		var.setTipo(Tela.tfTipo.getText());
+		
+		
+		while (aux != null) {
+			if (id == aux.getId()) {
+			
+				Tela.tfData.setText(aux.getData());
+				Tela.tfHora.setText(aux.getHora());
+				Tela.tfEsta.setText(aux.getEstacao());
+				Tela.tfPolu.setText(aux.getPoluente());
+				Tela.tfValor.setText(Double.toString(aux.getValor()));
+				Tela.tfUni.setText(aux.getUnidade());
+				Tela.tfTipo.setText(aux.getTipo());
+				
+			}
+		}
 	}
 
 	public void order(Tela ta) throws Exception {
@@ -83,6 +130,18 @@ public class CtrlTela {
 		}
 		LerTexto.setLista(lista);
 	}
+	
+	public void resetarCampos() {
+		Tela.tfId.setText("");
+		Tela.tfData.setText("");
+		Tela.tfHora.setText("");
+		Tela.tfEsta.setText("");
+		Tela.tfPolu.setText("");
+		Tela.tfValor.setText("");
+		Tela.tfUni.setText("");
+		Tela.tfTipo.setText("");
+		
+	}
 
 	public void export(Tela ta) throws IOException {
 		Exportar expo = new Exportar();
@@ -91,10 +150,10 @@ public class CtrlTela {
 	}
 
 	public Dados getNovo() {
-		return novo;
+		return var;
 	}
 
 	public void setNovo(Dados novo) {
-		CtrlTela.novo = novo;
+		CtrlTela.var = novo;
 	}
 }
