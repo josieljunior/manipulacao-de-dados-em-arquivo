@@ -28,7 +28,7 @@ public class CtrlTela {
 		
 		ListaEncadeada.adicionarElementoNoInicioDaLista(var);
 		
-		
+		resetarCampos();
 		
 	}
 
@@ -70,23 +70,42 @@ public class CtrlTela {
 		getNovo().setUnidade(Tela.tfUni.getText());
 		getNovo().setTipo(Tela.tfTipo.getText());
 
-		Tela.tfId.setText("");
-		Tela.tfData.setText("");
-		Tela.tfHora.setText("");
-		Tela.tfEsta.setText("");
-		Tela.tfPolu.setText("");
-		Tela.tfValor.setText("");
-		Tela.tfUni.setText("");
-		Tela.tfTipo.setText("");
+		resetarCampos();
+		
 		Tela.btUpd.setVisible(true);
 		Tela.btUpd2.setVisible(false);
 
 	}
 
 	public void delete(Tela ta) {
+		Dados var = new Dados();
+		Dados aux = ListaEncadeada.getCabeca();
+		String Id = Tela.tfId.getText();
+		int id = Integer.parseInt(Id);
+		
+		var.setId(Integer.parseInt(Tela.tfId.getText()));
+		var.setData(Tela.tfData.getText());
+		var.setHora(Tela.tfHora.getText());
+		var.setEstacao(Tela.tfEsta.getText());
+		var.setPoluente(Tela.tfPolu.getText());
+		var.setValor(Double.parseDouble(Tela.tfValor.getText()));
+		var.setUnidade(Tela.tfUni.getText());
+		var.setTipo(Tela.tfTipo.getText());
 		
 		
-
+		while (aux != null) {
+			if (id == aux.getId()) {
+			
+				Tela.tfData.setText(aux.getData());
+				Tela.tfHora.setText(aux.getHora());
+				Tela.tfEsta.setText(aux.getEstacao());
+				Tela.tfPolu.setText(aux.getPoluente());
+				Tela.tfValor.setText(Double.toString(aux.getValor()));
+				Tela.tfUni.setText(aux.getUnidade());
+				Tela.tfTipo.setText(aux.getTipo());
+				
+			}
+		}
 	}
 
 	public void order(Tela ta) throws Exception {
@@ -98,6 +117,18 @@ public class CtrlTela {
 			lista.adicionarElementoNoInicioDaLista(aux);
 		}
 		LerTexto.setLista(lista);
+	}
+	
+	public void resetarCampos() {
+		Tela.tfId.setText("");
+		Tela.tfData.setText("");
+		Tela.tfHora.setText("");
+		Tela.tfEsta.setText("");
+		Tela.tfPolu.setText("");
+		Tela.tfValor.setText("");
+		Tela.tfUni.setText("");
+		Tela.tfTipo.setText("");
+		
 	}
 
 	public Dados getNovo() {
