@@ -1,6 +1,9 @@
 package controller;
 
+import java.io.IOException;
+
 import model.Dados;
+import model.Exportar;
 import model.LerTexto;
 import model.ListaEncadeada;
 import model.Sort;
@@ -129,6 +132,12 @@ public class CtrlTela {
 		Tela.tfUni.setText("");
 		Tela.tfTipo.setText("");
 		
+	}
+
+	public void export(Tela ta) throws IOException {
+		Exportar expo = new Exportar();
+		
+
 	}
 
 	public Dados getNovo() {
