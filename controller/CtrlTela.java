@@ -36,7 +36,10 @@ public class CtrlTela {
 	}
 
 	public void read(Tela ta) {
-		
+
+
+		Tabela table2 = new Tabela();
+
 		table2.exibirTabela(LerTexto.getLista());
 
 	}
@@ -81,6 +84,8 @@ public class CtrlTela {
 	}
 
 	public void delete(Tela ta) {
+
+
 		Dados var = new Dados();
 		Dados aux = ListaEncadeada.getCabeca();
 		String Id = Tela.tfId.getText();
