@@ -1,6 +1,9 @@
 package controller;
 
+import java.io.IOException;
+
 import model.Dados;
+import model.Exportar;
 import model.LerTexto;
 import model.ListaEncadeada;
 import model.Sort;
@@ -8,9 +11,13 @@ import view.Tabela;
 import view.Tela;
 
 public class CtrlTela {
+
+	private static Dados novo;
+
 	Tabela table2 = new Tabela();
 	
 	private static Dados var;
+
 
 	public void create(Tela ta) {
 		
@@ -33,7 +40,10 @@ public class CtrlTela {
 	}
 
 	public void read(Tela ta) {
-		
+
+
+		Tabela table2 = new Tabela();
+
 		table2.exibirTabela(LerTexto.getLista());
 
 	}
@@ -78,6 +88,8 @@ public class CtrlTela {
 	}
 
 	public void delete(Tela ta) {
+
+
 		Dados var = new Dados();
 		Dados aux = ListaEncadeada.getCabeca();
 		String Id = Tela.tfId.getText();
@@ -129,6 +141,12 @@ public class CtrlTela {
 		Tela.tfUni.setText("");
 		Tela.tfTipo.setText("");
 		
+	}
+
+	public void export(Tela ta) throws IOException {
+		Exportar expo = new Exportar();
+		
+
 	}
 
 	public Dados getNovo() {
