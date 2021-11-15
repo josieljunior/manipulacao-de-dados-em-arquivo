@@ -41,17 +41,9 @@ public class ListaEncadeada {
 		if(ListaEncadeada.getTamanho() == 0) {
 			JOptionPane.showMessageDialog(null, "A Tabela está vazia!");
 		} else {
-			while (aux!=null) {
-				if(aux.getProximo() == null) {
+				
+				ListaEncadeada.cabeca = aux.getProximo();
 					
-					ListaEncadeada.cabeca = aux;
-					
-					
-				}else {
-					aux = aux.getProximo();	
-				}
-					
-			}
 			
 		}
 		
