@@ -4,10 +4,13 @@ public class ListaEncadeada {
 
 	private static Dados cabeca = null;
 	private static int tamanho = 0;
-
+	private static int limite = 300000;
 	public static void adicionarElementoNoInicioDaLista(Dados e) {
 		e.setProximo(cabeca);
 		cabeca = e;
+		if(tamanho == limite) {
+			limite ++;
+		}
 		tamanho++;
 	}
 	
@@ -31,10 +34,24 @@ public class ListaEncadeada {
 		return vetor;
     }
 
+	public static int getLimite() {
+		return limite;
+	}
+
+	public static void setLimite(int limite) {
+		ListaEncadeada.limite = limite;
+	}
+	public static void setLimite() {
+		ListaEncadeada.limite ++;
+	}
+
 	public static Dados getCabeca() {
 		return cabeca;
 	}
 
+	
+
+	
 	public void setCabeca(Dados cabeca) {
 		ListaEncadeada.cabeca = cabeca;
 	}
@@ -47,5 +64,7 @@ public class ListaEncadeada {
 	public void setTamanho(int tamanho) {
 		ListaEncadeada.tamanho = tamanho;
 	}
+
+
 
 }

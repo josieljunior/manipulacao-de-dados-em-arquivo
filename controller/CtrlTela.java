@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 import model.Dados;
 import model.Exportar;
 import model.LerTexto;
@@ -19,7 +21,8 @@ public class CtrlTela {
 		
 		Dados var = new Dados();
 		
-		var.setId(Integer.parseInt(Tela.tfId.getText()));
+		var.setId();
+		JOptionPane.showMessageDialog(null, "ID adicionado automaticamente.");
 		var.setData(Tela.tfData.getText());
 		var.setHora(Tela.tfHora.getText());
 		var.setEstacao(Tela.tfEsta.getText());
@@ -37,8 +40,6 @@ public class CtrlTela {
 
 	public void read(Tela ta) {
 
-
-		Tabela table2 = new Tabela();
 
 		table2.exibirTabela(LerTexto.getLista());
 

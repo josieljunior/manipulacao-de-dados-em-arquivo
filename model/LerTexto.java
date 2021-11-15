@@ -19,7 +19,7 @@ public class LerTexto {
 		try {
 
 			br = new BufferedReader(new FileReader(arquivoTXT));
-			while (cont < 300001) {
+			while (cont < ListaEncadeada.getLimite()+1) {
 				linha = br.readLine();
 				String[] coluna = linha.split(csvDivisor);
 				Dados dados = new Dados();

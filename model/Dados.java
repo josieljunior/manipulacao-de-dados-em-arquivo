@@ -20,6 +20,11 @@ public class Dados {
 	public void setId(int id) {
 		this.id = id;
 	}
+	public void setId() {
+		ListaEncadeada.setLimite();
+		this.id = ListaEncadeada.getLimite();
+	}
+	
 	public String getData() {
 		return data;
 	}
