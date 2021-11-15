@@ -1,5 +1,7 @@
 package model;
 
+import javax.swing.JOptionPane;
+
 public class ListaEncadeada {
 
 	private static Dados cabeca = null;
@@ -34,6 +36,32 @@ public class ListaEncadeada {
 		return vetor;
     }
 
+	public static void removerPrimeiro() {
+		Dados aux = cabeca;
+		if(ListaEncadeada.getTamanho() == 0) {
+			JOptionPane.showMessageDialog(null, "A Tabela está vazia!");
+		} else {
+			while (aux!=null) {
+				if(aux.getProximo() == null) {
+					
+					ListaEncadeada.cabeca = aux;
+					
+					
+				}else {
+					aux = aux.getProximo();	
+				}
+					
+			}
+			
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
 	public static int getLimite() {
 		return limite;
 	}
