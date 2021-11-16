@@ -13,23 +13,23 @@ public class Sort {
 	}
 
 	private static int separar(Dados[] vetor, int inicio, int fim) {
-		double pivo = vetor[inicio].getValor();
+		Dados pivo = vetor[inicio];
 		int i = inicio + 1;
 		while (i <= fim) {
-			if (vetor[i].getValor() <= pivo)
+			if (vetor[i].getValor() <= pivo.getValor())
 				i++;
-			else if (pivo < vetor[fim].getValor())
+			else if (pivo.getValor() < vetor[fim].getValor())
 				fim--;
 			else {
-				double troca = vetor[i].getValor();
-				vetor[i].setValor(vetor[fim].getValor());
-				vetor[fim].setValor(troca);
+				Dados troca = vetor[i];
+				vetor[i] = vetor[fim];
+				vetor[fim] = troca;
 				i++;
 				fim--;
 			}
 		}
-		vetor[inicio].setValor(vetor[fim].getValor());
-		vetor[fim].setValor(pivo);
+		vetor[inicio] = vetor[fim];
+		vetor[fim] = pivo;
 		return fim;
 	}
 

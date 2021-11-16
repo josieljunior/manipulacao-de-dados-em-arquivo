@@ -11,6 +11,7 @@ public class Exportar {
 	
 	public Exportar() throws IOException {
 		
+	
 		JFileChooser chooser = new JFileChooser();
 		chooser.setCurrentDirectory(new File("/aps2/"));
 		int retrival = chooser.showSaveDialog(null);

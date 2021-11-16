@@ -3,11 +3,8 @@ package view;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
-
 import model.Dados;
-import model.LerTexto;
 import model.ListaEncadeada;
 
 public class Tabela extends JFrame {

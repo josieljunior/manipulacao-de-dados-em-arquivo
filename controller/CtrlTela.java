@@ -1,11 +1,8 @@
 package controller;
 
 import java.io.IOException;
-
 import javax.swing.JOptionPane;
-
 import model.Dados;
-import model.Exportar;
 import model.LerTexto;
 import model.ListaEncadeada;
 import model.Sort;
@@ -31,20 +28,19 @@ public class CtrlTela {
 		var.setUnidade(Tela.tfUni.getText());
 		var.setTipo(Tela.tfTipo.getText());
 		
-		
 		ListaEncadeada.adicionarElementoNoInicioDaLista(var);
 		
 		resetarCampos();
+		JOptionPane.showMessageDialog(null, "Linha adicionada com sucesso.");
 		
 	}
 
+	
 	public void read(Tela ta) {
-
-
 		table2.exibirTabela(LerTexto.getLista());
-
 	}
 
+	
 	public void update(Tela ta) {
 		Dados aux = ListaEncadeada.getCabeca();
 		String Id = Tela.tfId.getText();
@@ -67,6 +63,7 @@ public class CtrlTela {
 		Tela.btUpd2.setVisible(true);
 	}
 
+	
 	public void update2(Tela ta) {
 
 		getNovo().setData(Tela.tfData.getText());
@@ -86,13 +83,10 @@ public class CtrlTela {
 
 	public void delete(Tela ta) {
 
-					
 		ListaEncadeada.removerPrimeiro() ;
 		
-		
-
-		
 	}
+	
 
 	public void order(Tela ta) throws Exception {
 		Dados[] vetor = ListaEncadeada.criarVetor(LerTexto.getLista());
@@ -118,8 +112,9 @@ public class CtrlTela {
 	}
 
 	public void export(Tela ta) throws IOException {
-		Exportar expo = new Exportar();
-		
+		//Exportar expo = new Exportar();
+
+		Runtime.getRuntime().exec("notepad aps2/dados.txt");
 
 	}
 

@@ -69,13 +69,9 @@ public class ListaEncadeada {
 		return cabeca;
 	}
 
-	
-
-	
 	public void setCabeca(Dados cabeca) {
 		ListaEncadeada.cabeca = cabeca;
 	}
-
 
 	public static int getTamanho() {
 		return tamanho;
