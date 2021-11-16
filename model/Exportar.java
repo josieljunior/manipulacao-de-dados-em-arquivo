@@ -7,9 +7,11 @@ import java.io.IOException;
 
 import javax.swing.JFileChooser;
 
+import controller.CtrlTela;
+
 public class Exportar {
 	
-	public Exportar() throws IOException {
+	public void principal() throws IOException {
 		
 	
 		JFileChooser chooser = new JFileChooser();
@@ -45,4 +47,20 @@ public class Exportar {
 		}
 	}
 
+	public void log() throws IOException {
+		
+		
+		JFileChooser chooser = new JFileChooser();
+		chooser.setCurrentDirectory(new File("/aps2/"));
+		BufferedWriter br = new BufferedWriter(new FileWriter("aps2/log.txt")); 
+		br.write("----------------------------------------------------------------------------");
+		br.newLine();
+		br.write("O metodo QuickSorte demorou: " +  (float)CtrlTela.quickTime/1000 + " segundos para ordenar " + ListaEncadeada.getTamanho() + " dados.");
+		br.close();
+
+				
+			
+		
+	}
+	
 }

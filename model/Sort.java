@@ -4,7 +4,9 @@ public class Sort {
 
 	// Quick Sort
 
+	
 	public static void quickSort(Dados[] vetor, int inicio, int fim) {
+		
 		if (inicio < fim) {
 			int posicaoPivo = separar(vetor, inicio, fim);
 			quickSort(vetor, inicio, posicaoPivo - 1);
@@ -53,7 +55,6 @@ public class Sort {
 	// Selection Sort
 
 	public static Dados[] selectionSort(Dados[] arr) {
-		System.out.println(arr.length);
 		for (int i = 0; i <= arr.length - 1; i++) {
 			int index = i;
 			for (int j = i + 1; j < arr.length; j++) {
@@ -61,12 +62,14 @@ public class Sort {
 					index = j;
 				}
 			}
-			double smallerNumber = arr[index].getValor();
-			arr[index].setValor(arr[i].getValor());
-			arr[i].setValor(smallerNumber);
+			Dados smallerNumber = arr[index];
+			arr[index] = arr[i];
+			arr[i] = smallerNumber;
 		}
 		return arr;
 	}
+	
+
 
 	/* Teste
 	 * 

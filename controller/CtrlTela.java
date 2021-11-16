@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import model.Dados;
+import model.Exportar;
 import model.LerTexto;
 import model.ListaEncadeada;
 import model.Sort;
@@ -11,7 +12,8 @@ import view.Tela;
 
 public class CtrlTela {
 	Tabela table2 = new Tabela();
-	
+	public static long selectTime;
+	public static long quickTime;
 	private static Dados var;
 
 	public void create(Tela ta) {
@@ -88,9 +90,22 @@ public class CtrlTela {
 	}
 	
 
-	public void order(Tela ta) throws Exception {
+	public void quick(Tela ta) throws Exception {
+		quickTime = System.currentTimeMillis();
 		Dados[] vetor = ListaEncadeada.criarVetor(LerTexto.getLista());
 		Sort.quickSort(vetor, 0, vetor.length - 1);
+		ListaEncadeada lista = new ListaEncadeada();
+		for (int i = 0; i < vetor.length; i++) {
+			Dados aux = vetor[i];
+			lista.adicionarElementoNoInicioDaLista(aux);
+		}
+		LerTexto.setLista(lista);
+		quickTime = System.currentTimeMillis() - quickTime;
+	}
+	
+	public void selection(Tela ta) throws Exception {
+		Dados[] vetor = ListaEncadeada.criarVetor(LerTexto.getLista());
+		Sort.selectionSort(vetor);
 		ListaEncadeada lista = new ListaEncadeada();
 		for (int i = 0; i < vetor.length; i++) {
 			Dados aux = vetor[i];
@@ -112,9 +127,16 @@ public class CtrlTela {
 	}
 
 	public void export(Tela ta) throws IOException {
-		//Exportar expo = new Exportar();
+		Exportar expo = new Exportar();
+		expo.principal();
 
-		Runtime.getRuntime().exec("notepad aps2/dados.txt");
+	}
+	
+	public void logs(Tela ta) throws IOException {
+		Exportar expo = new Exportar();
+		expo.log();
+
+		Runtime.getRuntime().exec("notepad aps2/log.txt");
 
 	}
 

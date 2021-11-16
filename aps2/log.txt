@@ -1,0 +1,2 @@
+----------------------------------------------------------------------------
+O metodo QuickSorte demorou: 3.417 segundospara ordenar 600000 dados.
