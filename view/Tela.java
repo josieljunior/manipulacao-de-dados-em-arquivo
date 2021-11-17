@@ -99,7 +99,6 @@ public class Tela extends JFrame implements ActionListener {
 		btDel.setBounds(270, 300, 75, 25);
 		btOrde1.setBounds(30, 370, 155, 25);
 		btOrde2.setBounds(190, 370, 155, 25);
-		btExport.setBounds(270, 400, 75, 25);
 		btCan.setBounds(30, 350, 75, 25);
 
 		mb.add(opcoes);

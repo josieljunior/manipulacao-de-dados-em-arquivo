@@ -55,7 +55,18 @@ public class Exportar {
 		BufferedWriter br = new BufferedWriter(new FileWriter("aps2/log.txt")); 
 		br.write("----------------------------------------------------------------------------");
 		br.newLine();
-		br.write("O metodo QuickSorte demorou: " +  (float)CtrlTela.quickTime/1000 + " segundos para ordenar " + ListaEncadeada.getTamanho() + " dados.");
+		br.write("-----------------TEMPO DE EXECUÇÃO DOS METODOS DE ORDENAÇÃO-----------------");
+		br.newLine();
+		br.write("----------------------------------------------------------------------------");
+		br.newLine();
+		br.write("O metodo QuickSort demorou: " +  (float)CtrlTela.quickTime/1000 + " segundos para ordenar " + ListaEncadeada.getLimite() + " dados.");
+		br.newLine();
+		br.write("----------------------------------------------------------------------------");
+		br.newLine();
+		br.write("O metodo SelectionSort demorou: " +  (float)CtrlTela.selectTime/1000 + " segundos para ordenar " + ListaEncadeada.getLimite() + " dados.");
+		br.newLine();
+		br.write("----------------------------------------------------------------------------");
+		
 		br.close();
 
 				

@@ -6,7 +6,7 @@ public class ListaEncadeada {
 
 	private static Dados cabeca = null;
 	private static int tamanho = 0;
-	private static int limite = 300000;
+	private static int limite = 100000;
 	public static void adicionarElementoNoInicioDaLista(Dados e) {
 		e.setProximo(cabeca);
 		cabeca = e;

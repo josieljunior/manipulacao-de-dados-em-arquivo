@@ -1,2 +1,7 @@
 ----------------------------------------------------------------------------
-O metodo QuickSorte demorou: 3.417 segundospara ordenar 600000 dados.
+-----------------TEMPO DE EXECUÇÃO DOS METODOS DE ORDENAÇÃO-----------------
+----------------------------------------------------------------------------
+O metodo QuickSort demorou: 0.0 segundos para ordenar 200000 dados.
+----------------------------------------------------------------------------
+O metodo SelectionSort demorou: 25.503 segundos para ordenar 200000 dados.
+----------------------------------------------------------------------------

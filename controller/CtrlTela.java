@@ -104,6 +104,7 @@ public class CtrlTela {
 	}
 	
 	public void selection(Tela ta) throws Exception {
+		selectTime = System.currentTimeMillis();
 		Dados[] vetor = ListaEncadeada.criarVetor(LerTexto.getLista());
 		Sort.selectionSort(vetor);
 		ListaEncadeada lista = new ListaEncadeada();
@@ -112,6 +113,7 @@ public class CtrlTela {
 			lista.adicionarElementoNoInicioDaLista(aux);
 		}
 		LerTexto.setLista(lista);
+		selectTime = System.currentTimeMillis() - selectTime;
 	}
 	
 	public void resetarCampos() {
@@ -139,6 +141,7 @@ public class CtrlTela {
 		Runtime.getRuntime().exec("notepad aps2/log.txt");
 
 	}
+	
 
 	public Dados getNovo() {
 		return var;
