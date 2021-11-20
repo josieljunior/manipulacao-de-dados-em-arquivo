@@ -3,5 +3,5 @@
 ----------------------------------------------------------------------------
 O metodo QuickSort demorou: 0.0 segundos para ordenar 200000 dados.
 ----------------------------------------------------------------------------
-O metodo SelectionSort demorou: 25.503 segundos para ordenar 200000 dados.
+O metodo SelectionSort demorou: 47.342 segundos para ordenar 200000 dados.
 ----------------------------------------------------------------------------
